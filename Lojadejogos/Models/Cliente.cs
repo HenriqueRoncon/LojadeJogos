@@ -13,8 +13,13 @@ namespace Lojadejogos.Models
         [Required(ErrorMessage = "O CPF é obrigatório")]
         public string CPF { get; set; }
 
-        [Display(Name = "Data Nascimento")]
-        public string DataNasc { get; set; }
+        [Required(ErrorMessage = "A data do aniversário é obrigatória")]
+        public DateTime DataNasc
+        {
+            get { return this.dataNasc.HasValue ? this.dataNasc.Value : DateTime.Now; }
+            set { this.dataNasc = value; }
+        }
+        private DateTime? dataNasc = null;
 
         [Required(ErrorMessage = "O email é obrigatório")]
         public string Email { get; set; }

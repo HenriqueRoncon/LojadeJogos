@@ -23,7 +23,14 @@ namespace Lojadejogos.Models
 
         [Display(Name = "Data Nascimento")]
         [Required(ErrorMessage = "A data de nascimento é obrigatório")]
-        public string DataNasc { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime DataNasc
+        {
+            get { return this.dataNasc.HasValue ? this.dataNasc.Value : DateTime.Now; }
+            set { this.dataNasc = value; }
+        }
+        private DateTime? dataNasc = null;
 
         [Display(Name = "Endereço")]
         [Required(ErrorMessage = "O endereço é obrigatório")]
@@ -35,7 +42,7 @@ namespace Lojadejogos.Models
         [Required(ErrorMessage = "O email é obrigatório")]
         public string Email { get; set; }
 
-
+        [Required(ErrorMessage = "O cargo é obrigatório")]
         public string Cargo { get; set; }
 
     }

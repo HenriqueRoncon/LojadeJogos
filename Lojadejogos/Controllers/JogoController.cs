@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lojadejogos.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,28 +11,38 @@ namespace Lojadejogos.Controllers
 {
     public class JogoController : Controller
     {
-        public ActionResult CadastrodeJogos()
+        public ActionResult Jogo()
         {
-            return View();
+            var jogo = new Jogo();
+            return View(jogo);
         }
+
+        Acoes ac = new Acoes();
+
         [HttpPost]
-
-
-
-        public ActionResult CadastrodeJogos(Jogo jogo)
+        public ActionResult Jogo(Jogo jogo)
         {
-            if (ModelState.IsValid)
+            try
             {
-                return View("ResultadoJogo", jogo);
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarJogo(jogo);
+                    return RedirectToAction("ListarJogo");
+                }
+
+                return View(jogo);
             }
-            return View(jogo);
+            catch
+            {
+                return View("ListarJogo");
+            }
         }
 
-
-
-        public ActionResult ResultadoJogo(Jogo jogo)
+        public ActionResult ListarJogo()
         {
-            return View(jogo);
+            var ExibirJogo = new Acoes();
+            var TodosJogos = ExibirJogo.ListarJogo();
+            return View(TodosJogos);
         }
     }
 }

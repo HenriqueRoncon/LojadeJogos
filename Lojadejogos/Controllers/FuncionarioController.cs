@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lojadejogos.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,28 +11,38 @@ namespace Lojadejogos.Controllers
 {
     public class FuncionarioController : Controller
     {
-        public ActionResult CadastrodeFuncionarios()
+        public ActionResult Funcionario()
         {
-            return View();
+            var funcionario = new Funcionario();
+            return View(funcionario);
         }
+        
+        Acoes ac = new Acoes();
+
         [HttpPost]
-
-
-
-        public ActionResult CadastrodeFuncionarios(Funcionario funcionario)
+        public ActionResult Funcionario(Funcionario fun)
         {
-            if (ModelState.IsValid)
+            try
             {
-                return View("ResultadoFuncionario", funcionario);
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarFuncionario(fun);
+                    return RedirectToAction("ListarFuncionario");
+                }
+
+                return View(fun);
             }
-            return View(funcionario);
+            catch
+            {
+                return View("ListarFuncionario");
+            }
         }
 
-
-
-        public ActionResult ResultadoFuncionario(Funcionario funcionario)
+        public ActionResult ListarFuncionario()
         {
-            return View(funcionario);
+            var ExibirFunc = new Acoes();
+            var TodosFunc = ExibirFunc.ListarFuncionario();
+            return View(TodosFunc);
         }
     }
 }

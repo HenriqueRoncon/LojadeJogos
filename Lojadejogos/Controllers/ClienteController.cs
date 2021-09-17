@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lojadejogos.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,28 +11,38 @@ namespace Lojadejogos.Controllers
 {
     public class ClienteController : Controller
     {
-        public ActionResult CadastrodeClientes()
+        public ActionResult Cliente()
         {
-            return View();
+            var cliente = new Cliente();
+            return View(cliente);
         }
+
+        Acoes ac = new Acoes();
+
         [HttpPost]
-
-
-
-        public ActionResult CadastrodeClientes(Cliente cliente)
+        public ActionResult Cliente(Cliente cli)
         {
-            if (ModelState.IsValid)
+            try
             {
-                return View("ResultadoCliente", cliente);
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarCliente(cli);
+                    return RedirectToAction("ListarCliente");
+                }
+
+                return View(cli);
             }
-            return View(cliente);
+            catch
+            {
+                return View("ListarCliente");
+            }
         }
 
-
-
-        public ActionResult ResultadoCliente(Cliente cliente)
+        public ActionResult ListarCliente()
         {
-            return View(cliente);
+            var ExibirCli = new Acoes();
+            var TodosFunc = ExibirCli.ListarCliente();
+            return View(TodosFunc);
         }
     }
 }

@@ -84,3 +84,16 @@ C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\obj\Debug\Lojadejo
 C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\obj\Debug\Lojadejogos.csproj.CopyComplete
 C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\obj\Debug\Lojadejogos.dll
 C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\obj\Debug\Lojadejogos.pdb
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\MySql.Data.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\Google.Protobuf.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\Zstandard.Net.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\BouncyCastle.Crypto.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\Ubiety.Dns.Core.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\System.Memory.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\System.Buffers.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\K4os.Compression.LZ4.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\K4os.Hash.xxHash.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\System.Numerics.Vectors.dll
+C:\Users\henri\Desktop\DS\Lojadejogos\Lojadejogos\Lojadejogos\bin\MySql.Data.xml
