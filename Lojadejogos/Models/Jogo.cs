@@ -35,6 +35,7 @@ namespace Lojadejogos.Models
         public string Plataforma { get; set; }
 
         [Required(ErrorMessage = "O ano de lançamento é obrigatório")]
+        [RegularExpression(@"([0-9]{4})", ErrorMessage = "Insira um formato de ano valido. Ex 0000")]
         [Display(Name = "Ano de Lançamento")]
         public string AnoLanc { get; set; }
 

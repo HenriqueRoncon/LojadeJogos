@@ -16,9 +16,11 @@ namespace Lojadejogos.Models
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório")]
+        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}/[0-9]{2})|([0-9]{11})", ErrorMessage = "Insira um formato de CPF válido. Ex: 000.000.000/00")]
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "O RG é obrigatório")]
+        [RegularExpression(@"(^(\d{2}\x2E\d{3}\x2E\d{3}[-]\d{1})$|^(\d{2}\x2E\d{3}\x2E\d{3})$)", ErrorMessage = "Insira um formato de RG válido. Ex: 00.000.000-0")]
         public string RG { get; set; }
 
         [Display(Name = "Data Nascimento")]
@@ -37,9 +39,12 @@ namespace Lojadejogos.Models
         public string Endereco { get; set; }
 
         [Required(ErrorMessage = "O celular é obrigatório")]
+        [RegularExpression(@"^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$",
+            ErrorMessage = "Insira um formato de número válido. Ex (00) 00000-0000")]
         public string Celular { get; set; }
 
         [Required(ErrorMessage = "O email é obrigatório")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Digite um e-mail válido")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "O cargo é obrigatório")]
